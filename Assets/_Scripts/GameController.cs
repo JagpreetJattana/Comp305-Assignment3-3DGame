@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -19,9 +20,10 @@ public class GameController : MonoBehaviour {
     public Text livesLabel;
     public Text scoreLabel;
     public Text gameOverLabel;
-   // public SupermanController superman;
-   // public RingController ring;
-//    public Text finalScoreLabel;
+    // public SupermanController superman;
+    // public RingController ring;
+    //    public Text finalScoreLabel;
+    public Text WinGameLabel;
     public Button restartButton;
    // public HeartController heart;
    
@@ -79,7 +81,7 @@ public class GameController : MonoBehaviour {
         this.ScoreValue = 0;
         this.LivesValue = 5;
         this.gameOverLabel.enabled = false;
-   
+        this.WinGameLabel.gameObject.SetActive(false);
         this.restartButton.gameObject.SetActive(false);
     
 
@@ -101,9 +103,19 @@ public class GameController : MonoBehaviour {
 
     }
 
+    private void _winGame()
+    {
+       
+        this.livesLabel.gameObject.SetActive(false);
+        this.WinGameLabel.gameObject.SetActive(true);
+        this.scoreLabel.gameObject.SetActive(false);
+        this.restartButton.gameObject.SetActive(true);
+
+    }
     //public methods
     //method to restart the game
     public void RestarButtonClicked() {
-        Application.LoadLevel("Main");
+        //Application.LoadLevel("Main");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

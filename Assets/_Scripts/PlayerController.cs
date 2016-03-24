@@ -6,10 +6,12 @@ public class PlayerController : MonoBehaviour {
     //public instance variables
     public GameController gameController;
 
+    //private instance variables
+    private Transform _transform;
     // Use this for initialization
     void Start () {
-	
-	}
+        this._transform = gameObject.GetComponent<Transform>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -42,9 +44,25 @@ public class PlayerController : MonoBehaviour {
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.name == "Key")
+        if (col.gameObject.CompareTag("Key"))
         {
-            Debug.Log("collision");
+            
+            Destroy(col.gameObject);
+            this.gameController.ScoreValue += 10;
         }
+        if (col.gameObject.CompareTag("Enemy"))
+        {
+            this.gameController.LivesValue--;
+            this._resetPlayer();
+           
+        }
+
+        Debug.Log("collision outside");
+    }
+
+    //private methods
+    private void _resetPlayer() {
+        this._transform.position = new Vector3(8f, 16f, -4f);
+
     }
 }
