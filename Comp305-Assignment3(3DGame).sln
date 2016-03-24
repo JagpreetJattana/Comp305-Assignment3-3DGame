@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{C7EAA713-A4EA-9DF2-8F86-EAB2F9ABC4A3}") = "Comp305-Assignment3(3DGame)", "Assembly-CSharp.csproj", "{B8AB18C5-6BB7-56F4-570B-B9E66278F840}"
+EndProject
+Project("{C7EAA713-A4EA-9DF2-8F86-EAB2F9ABC4A3}") = "Comp305-Assignment3(3DGame)", "Assembly-CSharp-Editor.csproj", "{0E1C6F2F-111D-B3FB-F825-1DBE343EA193}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8AB18C5-6BB7-56F4-570B-B9E66278F840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8AB18C5-6BB7-56F4-570B-B9E66278F840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8AB18C5-6BB7-56F4-570B-B9E66278F840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8AB18C5-6BB7-56F4-570B-B9E66278F840}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E1C6F2F-111D-B3FB-F825-1DBE343EA193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E1C6F2F-111D-B3FB-F825-1DBE343EA193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E1C6F2F-111D-B3FB-F825-1DBE343EA193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E1C6F2F-111D-B3FB-F825-1DBE343EA193}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
