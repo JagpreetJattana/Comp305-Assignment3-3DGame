@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour {
 
     //private instance variables
-    private int _scoreValue;         
+    private int _keyValue;         
     private int _livesValue;
     [SerializeField]
 //    private AudioSource _gameOverSound;
@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour {
     public Text livesLabel;
     public Text scoreLabel;
     public Text gameOverLabel;
+
     // public SupermanController superman;
     // public RingController ring;
     //    public Text finalScoreLabel;
@@ -29,17 +30,17 @@ public class GameController : MonoBehaviour {
    
 
     //getters and setters
-    public int ScoreValue
+    public int KeyValue
     {
         get
         {
-            return _scoreValue;
+            return _keyValue;
         }
 
         set
         {
-            _scoreValue = value;
-            this.scoreLabel.text = "Keys: "+this._scoreValue;
+            _keyValue = value;
+            this.scoreLabel.text = "Keys: "+this._keyValue;
         }
     }
 
@@ -78,7 +79,7 @@ public class GameController : MonoBehaviour {
 
     //private  methods
     private void _initialize() {
-        this.ScoreValue = 0;
+        this.KeyValue = 0;
         this.LivesValue = 5;
         this.gameOverLabel.enabled = false;
         this.WinGameLabel.gameObject.SetActive(false);
@@ -103,7 +104,7 @@ public class GameController : MonoBehaviour {
 
     }
 
-    private void _winGame()
+    public void _winGame()
     {
        
         this.livesLabel.gameObject.SetActive(false);

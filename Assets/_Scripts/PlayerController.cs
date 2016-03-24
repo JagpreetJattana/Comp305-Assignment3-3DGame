@@ -8,39 +8,28 @@ public class PlayerController : MonoBehaviour {
 
     //private instance variables
     private Transform _transform;
+    private AudioSource[] _audioSources;
+    private AudioSource _jumpSound;
+    private AudioSource _keySound;
+    private AudioSource _hurtSound;
+
     // Use this for initialization
     void Start () {
         this._transform = gameObject.GetComponent<Transform>();
+
+        this._audioSources = gameObject.GetComponents<AudioSource>();
+      //  this._jumpSound = this._audioSources[1];
+        this._keySound = this._audioSources[1];
+        this._hurtSound = this._audioSources[3];
     }
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
-
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-
-        if (other.gameObject.CompareTag("Key"))
-        {
-            //this._ringSound.Play();
-            this.gameController.ScoreValue += 100;
-        }
-      /*  if (other.gameObject.CompareTag("FireBall"))
-        {
-
-            this._fireballSound.Play();
-            this.gameController.LivesValue -= 1;
-        }
-
-        if (other.gameObject.CompareTag("Heart"))
-        {
-
-            this._heartSound.Play();
-            this.gameController.LivesValue += 1;
-        }*/
+       
 
     }
+
+
 
     void OnCollisionEnter(Collision col)
     {
@@ -48,21 +37,34 @@ public class PlayerController : MonoBehaviour {
         {
             
             Destroy(col.gameObject);
-            this.gameController.ScoreValue += 10;
+            this._keySound.Play();
+            this.gameController.KeyValue += 1;
         }
         if (col.gameObject.CompareTag("Enemy"))
         {
             this.gameController.LivesValue--;
+            
+            this._hurtSound.Play();
             this._resetPlayer();
-           
+
+        }
+        if (col.gameObject.CompareTag("Gate"))
+        {
+            if (this.gameController.KeyValue == 5) {
+                Destroy(col.gameObject);
+              
+                Debug.Log("Collision");
+                this.gameController._winGame();
+            }
+            Debug.Log("Collision gate");
         }
 
-        Debug.Log("collision outside");
+       
     }
 
     //private methods
     private void _resetPlayer() {
-        this._transform.position = new Vector3(8f, 16f, -4f);
+        this._transform.position = new Vector3(-23f, 15f, 24f);
 
     }
 }
