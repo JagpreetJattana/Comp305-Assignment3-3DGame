@@ -2,31 +2,31 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+/*
+Author: Jagpreet Jattana
+Last Modified: MArch-24-2016
 
+
+*/
 public class GameController : MonoBehaviour {
 
     //private instance variables
     private int _keyValue;         
     private int _livesValue;
-    [SerializeField]
-//    private AudioSource _gameOverSound;
+
     
      
 
+    //public instance variables
 
-    // Public instance varaibles
-//    public int fireballNumber=3;
- //   public EnemyController fireball;
     public Text livesLabel;
     public Text scoreLabel;
     public Text gameOverLabel;
 
-    // public SupermanController superman;
-    // public RingController ring;
-    //    public Text finalScoreLabel;
+   
     public Text WinGameLabel;
     public Button restartButton;
-   // public HeartController heart;
+
    
 
     //getters and setters
@@ -96,14 +96,11 @@ public class GameController : MonoBehaviour {
         this.restartButton.gameObject.SetActive(true);
         this.livesLabel.enabled = false;
         this.scoreLabel.enabled = false;
-     //   this.superman.gameObject.SetActive(false);
-      //  this.heart.gameObject.SetActive(false);
-      //  this.ring.gameObject.SetActive(false);
-     //   this._gameOverSound.Play();
-      //  this.enemy.gameObject.SetActive(false);
+   
 
     }
-
+    // public methods
+    //this method will execute when game objective is achieved
     public void _winGame()
     {
        
@@ -113,7 +110,7 @@ public class GameController : MonoBehaviour {
         this.restartButton.gameObject.SetActive(true);
 
     }
-    //public methods
+
     //method to restart the game
     public void RestarButtonClicked() {
         //Application.LoadLevel("Main");

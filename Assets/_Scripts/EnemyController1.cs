@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+/*
+Author: Jagpreet Jattana
+Last Modified: MArch-24-2016
 
+
+*/
 public class EnemyController1 : MonoBehaviour {
 
     // PRIVATE INSTANCE VARIABLES
@@ -9,7 +14,7 @@ public class EnemyController1 : MonoBehaviour {
     private int flip = 1;
 
 
-    // Use this for initialization
+    // Used this for initialization
     void Start()
     {
         this._transform = gameObject.GetComponent<Transform>();
@@ -18,8 +23,7 @@ public class EnemyController1 : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-       // this._transform.Rotate(0, 0, 3f);
-
+        //this makes enemies move up and down
         this._currentPosition = this._transform.position;
         if ((this._transform.position.y < 12)&&(flip==1))
         {
@@ -42,18 +46,9 @@ public class EnemyController1 : MonoBehaviour {
 
     }
 
-  /*  void OnCollisionEnter2D(Collision2D other)
-    {
-        //if saw falles down the platformer
-        if (other.gameObject.CompareTag("Death"))
-        {
 
-            this._restart();
 
-        }
-    }*/
-
-    //Private methods
+    //public methods
     public void _restart()
     {
         this._transform.position = new Vector3(11f, 2f, -2f);

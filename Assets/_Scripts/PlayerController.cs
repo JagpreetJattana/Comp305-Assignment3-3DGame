@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+/*
+Author: Jagpreet Jattana
+Last Modified: MArch-24-2016
 
+
+*/
 public class PlayerController : MonoBehaviour {
 
     //public instance variables
@@ -18,7 +23,6 @@ public class PlayerController : MonoBehaviour {
         this._transform = gameObject.GetComponent<Transform>();
 
         this._audioSources = gameObject.GetComponents<AudioSource>();
-      //  this._jumpSound = this._audioSources[1];
         this._keySound = this._audioSources[1];
         this._hurtSound = this._audioSources[3];
     }
@@ -30,7 +34,7 @@ public class PlayerController : MonoBehaviour {
     }
 
 
-
+    //mehod to detect collision between objects
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.CompareTag("Key"))
